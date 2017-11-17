@@ -1,27 +1,23 @@
 language: node_js
 node_js:
- - 6
- - 7
- - 8
-
+- 6
+- 7
+- 8
 matrix:
   include:
-    - node_js: 9
-      env: DEPLOY=run
-
+  - node_js: 9
+    env: DEPLOY=run
 sudo: false
-
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 deploy:
+  matrix:
   - provider: npm
     skip_cleanup: true
-    email: "ryuran+npm@20minutes.fr"
+    email: ryuran+npm@20minutes.fr
     api_key:
-      secure: AhrhxYB/kdDm5hopw6+1LLpGr/OupoUKVXqpgu5HxedABReah5DV4oCvNeRNaUkS67gPjvQiTrMC7K7zb28aJtHLiSe2ECNCB7ypGJIP+y7DcTExgDRfDP6q+IPqPAzcC6iWaxi/G/STiIMdESJk5P8at8nt8w3CLXhn6oMfnlSJBYpCBo7gEqtdZjo3HXpyiWQgzKb/c0dJ+kDrLire8BNU05R+OQZyhqavwfu7+oXfe70clfhT+rVzHv1+C/AxlB/Lmmd2d5h9Fs2i3kLHITbFuRE5SABAhTKjZ3TJDDRXDyc9kefS+Dea2THViaTBp53zSZoF3gok7xgUo3GYb0iP48AObM40mJdQj6EUu378OAM+kG7hYYkil8Dg18szdozOH+ADDxoRoR+5Ry8lZ9hS1l0tuuNT5RiZoptyZ0v7h4eoUmK82RxFJWdLQELhVm4MFdGypROBBtR3CaHwENSowlfBesRgbGpk6ryVwn2oFcDY3/nTblhngBKHyiiZoTDPjnPRb/zMIP5p2haalrEq2sMZa5crpu8zk5FyLzhXMesUDHDPZAqGHQFDcFMTz1ZFQ/VaG/bpCHFpAyFdVVpB/YGIddsrxSI020Ht1MJvqCfAnBfKMLgAi6tAxu3RMB0b5Glqj0elLuOFVveXpRR4Bx1Fm4V1BY9ZhEEltlk=
+      secure: OSiiwsZlhYFt06UIik77Jwxujc3KYBFslkK6HsxH7QRgjNBuZh5Mt5xpXQq3egYAcRcPslK0yEsZxZGp2aED9OTfR3OYU10umxpNNDKNNdS4jIP8UUIZEaY8ZKzv0a2xXi/pBd+Ls5oCLz70Snm21w5Yt6DZwRLOsuRdUl7JjcFBnV6HGsGK1DQmOg5IoJJOmnBEF19E26Z2FIa6z2+L3Ys956i5YqXwRynbPBN09Hsc3rnUiJVZZJm1NSdtOCnFZS4ITl8oYv2BJn/lLj81t9d3opesKHe7IRDrEb0/m07Bp7FVpqIbBhjpJQMYEh+vYbbOx5Q7A1r+/MSwmHAAhWG3rtbmZVm19Ny1zvODavQLbM2wD/FbSnzR7zm4iL2LqG26tvufpKJm61f36l1lg4B8+qyDDlP1vAQDYi2DXiVU1kS99LE+cOm9Ril9TPiroU8Tzcz5w/S62AhOCSTamgqutcIgEVcEQY7etPeVjrpiyQfpyDZqGx6aQq8JUSJF9bh/i3i7lIAINCbQKWU3ye5isk/CMkacj24s0AKv0/xgTTKIQM5He7x544yFd+tSHhyNI6QCLfuqqbMvDebDXzQ4BVFJj5NHbRTXQBKQJJ7/piDPXWcXGQZfuAI1LKgQTTrOEbK8FPlkX8OyRdZqca5yt3ZXGad06crEloJd60Q=
     on:
       tags: true
       condition: "$DEPLOY = run"

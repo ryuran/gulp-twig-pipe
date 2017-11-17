@@ -9,14 +9,11 @@ cache:
   directories:
   - node_modules
 deploy:
-  matrix:
-  - provider: npm
-    skip_cleanup: true
-    email: ryuran+npm@20minutes.fr
-    api_key:
-      secure: OSiiwsZlhYFt06UIik77Jwxujc3KYBFslkK6HsxH7QRgjNBuZh5Mt5xpXQq3egYAcRcPslK0yEsZxZGp2aED9OTfR3OYU10umxpNNDKNNdS4jIP8UUIZEaY8ZKzv0a2xXi/pBd+Ls5oCLz70Snm21w5Yt6DZwRLOsuRdUl7JjcFBnV6HGsGK1DQmOg5IoJJOmnBEF19E26Z2FIa6z2+L3Ys956i5YqXwRynbPBN09Hsc3rnUiJVZZJm1NSdtOCnFZS4ITl8oYv2BJn/lLj81t9d3opesKHe7IRDrEb0/m07Bp7FVpqIbBhjpJQMYEh+vYbbOx5Q7A1r+/MSwmHAAhWG3rtbmZVm19Ny1zvODavQLbM2wD/FbSnzR7zm4iL2LqG26tvufpKJm61f36l1lg4B8+qyDDlP1vAQDYi2DXiVU1kS99LE+cOm9Ril9TPiroU8Tzcz5w/S62AhOCSTamgqutcIgEVcEQY7etPeVjrpiyQfpyDZqGx6aQq8JUSJF9bh/i3i7lIAINCbQKWU3ye5isk/CMkacj24s0AKv0/xgTTKIQM5He7x544yFd+tSHhyNI6QCLfuqqbMvDebDXzQ4BVFJj5NHbRTXQBKQJJ7/piDPXWcXGQZfuAI1LKgQTTrOEbK8FPlkX8OyRdZqca5yt3ZXGad06crEloJd60Q=
-    on:
-      tags: true
-      node: '9'
+  provider: npm
+  skip_cleanup: true
+  email: ryuran+npm@20minutes.fr
   api_key:
     secure: LCjBFV1w8057d8+2F1NtAOl2LxRZF2Kz5Hxya3W/pTSb8r9BHSJRZIC/X6u7J4o+t8I2f9UT7BlyrfBH/Em7glowTnfSZdGDSh393AMzXnkoex0cL6nYbmgQtc3PS+NUIjP+wVB1zFpkWBBFmSLGYyrmxYdwR8OPy3GCQeUbwLWgvhllYBvPbDH96EYMuUf3hergzKySKM5dP2j3g8nfoxtyOATT7cR87VRELV57w5HSEiddgpJTGUGOrz9Rc0KmyFcEXkyqSYTxOcKb6miIogLs6JNvaP9JfuaJ5mBzgTdVOPewLwucoGwN0EYPhAOh6hRoNzwM9Z4UvTLb2GF9OhpDdPclWjCovJYnau2y6w/CB6D2AnWzcnbviak6o3CxEe1Yeacw8IuGchIOA8TnrzrhMxzkul/PetNaKnkRZVdX9N5ysXf9d3D9QFhx1FdjYHfpk/VEoDWiIwKsbkETndp59MliqqhNz3th0ddfUjXah13G1ubYjxft/uUcZ7C+b8pGPF+xAwRFyuf9u2isVN131+4fvQoD/d1i4kvc+A9P3uUbR5yXZJe2KR7fckg/1v+Slj28nuAWINH90jLgZePiFz8bjVcYw2yRTagwvR4RCu5pQLsLGS47gDyEIVLZSp+2fNznoxrkfe75vFRKxNZXn4iECk7CkqVFrUEDXTY=
+  on:
+    tags: true
+    node: '9'

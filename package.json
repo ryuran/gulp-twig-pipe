@@ -1,6 +1,6 @@
 {
   "name": "gulp-twig-pipe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gulp plugin that runs JSON files through a Twig template, converting them to HTML",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/philmander/gulp-hbs/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "homepage": "https://github.com/philmander/gulp-hbs",
   "dependencies": {

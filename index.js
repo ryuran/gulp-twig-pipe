@@ -110,10 +110,12 @@ function gulpTwigPipe(templateSrc, options) {
                 deferred = registry[relpath] = new Deferred();
             }
             try {
-                if (!file.isBuffer())
+                if (!file.isBuffer()) {
                     throw pluginError('Template source must be buffer');
+                }
                 var template = compile({
                     data: file.contents.toString(),
+                    name: file.path,
                     path: file.path
                 });
                 deferred.resolve(template);
@@ -121,8 +123,7 @@ function gulpTwigPipe(templateSrc, options) {
                     firstTemplate = template;
                 } else {
                     firstTemplate = false;
-                    theOnlyTemplate.reject(pluginError(
-                        'Multiple templates given, must select one'));
+                    theOnlyTemplate.reject(pluginError('Multiple templates given, must select one'));
                 }
             } catch(err) {
                 deferred.reject(err);
@@ -131,8 +132,7 @@ function gulpTwigPipe(templateSrc, options) {
             if (firstTemplate)
                 theOnlyTemplate.resolve(firstTemplate);
             else
-                theOnlyTemplate.reject(pluginError(
-                    'No templates in template stream'));
+                theOnlyTemplate.reject(pluginError('No templates in template stream'));
             noMoreTemplates();
         }).on('error', function(err) {
             templateStreamError = err;
@@ -171,6 +171,7 @@ function gulpTwigPipe(templateSrc, options) {
                 if (err) throw err;
                 var template = compile({
                     data: data,
+                    name: templateSrc,
                     path: templateSrc
                 });
                 deferred.resolve(template);

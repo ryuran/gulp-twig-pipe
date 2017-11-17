@@ -3,10 +3,7 @@ node_js:
 - 6
 - 7
 - 8
-matrix:
-  include:
-  - node_js: 9
-    env: DEPLOY=run
+- 9
 sudo: false
 cache:
   directories:
@@ -20,4 +17,4 @@ deploy:
       secure: OSiiwsZlhYFt06UIik77Jwxujc3KYBFslkK6HsxH7QRgjNBuZh5Mt5xpXQq3egYAcRcPslK0yEsZxZGp2aED9OTfR3OYU10umxpNNDKNNdS4jIP8UUIZEaY8ZKzv0a2xXi/pBd+Ls5oCLz70Snm21w5Yt6DZwRLOsuRdUl7JjcFBnV6HGsGK1DQmOg5IoJJOmnBEF19E26Z2FIa6z2+L3Ys956i5YqXwRynbPBN09Hsc3rnUiJVZZJm1NSdtOCnFZS4ITl8oYv2BJn/lLj81t9d3opesKHe7IRDrEb0/m07Bp7FVpqIbBhjpJQMYEh+vYbbOx5Q7A1r+/MSwmHAAhWG3rtbmZVm19Ny1zvODavQLbM2wD/FbSnzR7zm4iL2LqG26tvufpKJm61f36l1lg4B8+qyDDlP1vAQDYi2DXiVU1kS99LE+cOm9Ril9TPiroU8Tzcz5w/S62AhOCSTamgqutcIgEVcEQY7etPeVjrpiyQfpyDZqGx6aQq8JUSJF9bh/i3i7lIAINCbQKWU3ye5isk/CMkacj24s0AKv0/xgTTKIQM5He7x544yFd+tSHhyNI6QCLfuqqbMvDebDXzQ4BVFJj5NHbRTXQBKQJJ7/piDPXWcXGQZfuAI1LKgQTTrOEbK8FPlkX8OyRdZqca5yt3ZXGad06crEloJd60Q=
     on:
       tags: true
-      condition: "$DEPLOY = run"
+      node: '9'

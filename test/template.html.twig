@@ -1,0 +1,17 @@
+<h1>Gulp TWIG pipe  test</h1>
+<table>
+    <thead>
+    <th>Name</th>
+    <th>Job Title</th>
+    <th>Twitter</th>
+    </thead>
+    <tbody>
+        {% for user in users -%}
+        <tr>
+            <td>{{ user.person|fullName }}</td>
+            <td>{{ user.jobTitle }}</td>
+            <td><a href="https://twitter.com/{{ user.twitter }}">@{{ user.twitter }}</a></td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>

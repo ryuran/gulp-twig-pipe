@@ -37,7 +37,7 @@ different templates, using their relative path as a key.
 
 ### twig(templateSrc[, options])
 
-templateSrc: Path to a handlebars template,
+templateSrc: Path to a twig template,
 or gulp (or vinyl) stream of template files.
 
 The following options are supported:
@@ -91,7 +91,7 @@ The following options are supported:
   template stream.  Nested attribute names (separated by dots) are
   allowed.
 
-* **compile** (defaults to `handlebars.compile`).
+* **compile** (defaults to `Twig.twig`).
 
   Function used to compile each template.
   This function will accept a string and return a function.
@@ -102,10 +102,10 @@ The following options are supported:
 
 Extend twig.
 
-### twig.handlebars
+### twig.twig
 
-This is the underlying Handlebars object used by this plugin.
-Using this reference, you can use the full Handlebars API
+This is the underlying Twig object used by this plugin.
+Using this reference, you can use the full Twig.js API
 and be certain to affect the module used by the plugin.
 
 ## Cooperation
@@ -166,7 +166,7 @@ Then you can use `dataSource: 'data'` for gulp-twig to access the front matter.
 If you want to stick to the default property name, you can use the
 `vinyl` data source to make all of the file object available.
 In this case, you have to list the `frontMatter` path element
-of your data structure explicitely in your handlebars template.
+of your data structure explicitely in your twig template.
 
 ```js
     var fm = require('gulp-front-matter');

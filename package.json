@@ -1,6 +1,6 @@
 {
   "name": "gulp-twig-pipe",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Gulp plugin that runs JSON files through a Twig template, converting them to HTML",
   "main": "index.js",
   "scripts": {
@@ -45,7 +45,7 @@
     "mocha": "^4.0.1",
     "rewire": "^3.0.1",
     "vinyl": "^2.1.0",
-    "vinyl-fs": "^2.2.1",
+    "vinyl-fs": "^3.0.1",
     "vinyl-fs-mock": "^0.1.2"
   }
 }

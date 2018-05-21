@@ -1,18 +1,18 @@
 'use strict';
 
 var through = require('through2');
-var gutil = require('gulp-util');
+var replaceExt = require('replace-ext');
 var fs = require('fs');
 var Promise = require('bluebird').Promise;
 var Twig = require('twig');
-var PluginError = gutil.PluginError;
+var PluginError = require('plugin-error');
 
 var globalCache = {};
 
 var PLUGIN_NAME = 'gulp-hbs';
 
 function pluginError(msg) {
-    return new gutil.PluginError(PLUGIN_NAME, msg);
+    return new PluginError(PLUGIN_NAME, msg);
 }
 
 var THE_ONLY_TEMPLATE = {};
@@ -48,9 +48,11 @@ function gulpTwigPipe(templateSrc, options) {
     var templateStreamError = null;
 
     // Distinguish template source argument types
+    // TODO: test with `.isStream()` and `.isBuffer`
     if (typeof templateSrc === 'object' && templateSrc.pipe) {
-        // gutil.isStream seems to be too strict in the presence of
-        // different stream implementations, so use duck typing
+        // gutil.isStream is deprecated and seems to be too strict
+        // in the presence of different stream implementations,
+        // so use duck typing
         templatesFromStream(templateSrc);
     } else if (typeof templateSrc === 'string') {
         templateFromFile(templateSrc);
@@ -190,12 +192,12 @@ function gulpTwigPipe(templateSrc, options) {
                 || getTemplateName(data)
                 || defaultTemplateName)
             .then(function(template) {
-                file.path = gutil.replaceExtension(file.path, '.html');
+                file.path = replaceExt(file.path, '.html');
 
                 data._file= file;
                 data._target = {
                     path: file.path,
-                    relative: gutil.replaceExtension(file.relative, '.html'),
+                    relative: replaceExt(file.relative, '.html'),
                 };
 
                 // data = dataParser(data);

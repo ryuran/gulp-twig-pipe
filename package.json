@@ -1,6 +1,6 @@
 {
   "name": "gulp-twig-pipe",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Gulp plugin that runs JSON files through a Twig template, converting them to HTML",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/philmander/gulp-hbs.git"
+    "url": "https://github.com/ryuran/gulp-twig-pipe.git"
   },
   "keywords": [
     "twig",
@@ -20,19 +20,21 @@
   "author": "Yvain Liechti",
   "contributors": [
     "Phil Mander",
-    "Martin von Gagern <Martin.vGagern@gmx.net>"
+    "Martin von Gagern <Martin.vGagern@gmx.net>",
+    "Yvain Liechti"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/philmander/gulp-hbs/issues"
+    "url": "https://github.com/ryuran/gulp-twig-pipe/issues"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/philmander/gulp-hbs",
+  "homepage": "https://github.com/ryuran/gulp-twig-pipe",
   "dependencies": {
     "bluebird": "^3.0.6",
-    "gulp-util": "^3.0.4",
+    "plugin-error": "^1.0.1",
+    "replace-ext": "^1.0.0",
     "through2": "^2.0.3",
     "twig": "^1.10.5"
   },
@@ -42,10 +44,10 @@
     "gulp-front-matter": "^1.3.0",
     "markit-json": "^0.2.1",
     "merge-stream": "^1.0.0",
-    "mocha": "^4.0.1",
-    "rewire": "^3.0.1",
+    "mocha": "^5.0.2",
+    "rewire": "^4.0.1",
     "vinyl": "^2.1.0",
-    "vinyl-fs": "^3.0.1",
+    "vinyl-fs": "^3.0.3",
     "vinyl-fs-mock": "^0.1.2"
   }
 }

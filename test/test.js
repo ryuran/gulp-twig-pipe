@@ -1,5 +1,4 @@
 var assert = require('assert');
-var gutil = require('gulp-util');
 var vinyl = require('vinyl');
 var fs = require('fs');
 var through = require('through2');
